@@ -1,0 +1,10 @@
+FROM node:11.13.0
+
+WORKDIR /app
+
+RUN apt update
+RUN apt install --yes git python build-essential
+
+RUN git clone https://github.com/substack/node-mkdirp.git /app
+
+RUN git reset --hard f2003bbcffa80f8c9744579fabab1212fc84545a

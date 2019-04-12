@@ -1,0 +1,5 @@
+FROM benchmarks-base
+
+RUN npm config set registry https://registry.npmjs.org/
+
+CMD npm install --verbose

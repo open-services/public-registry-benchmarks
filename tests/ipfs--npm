@@ -1,0 +1,5 @@
+FROM benchmarks-base
+
+RUN npm config set registry https://registry.js.ipfs.io
+
+CMD npm install --verbose
