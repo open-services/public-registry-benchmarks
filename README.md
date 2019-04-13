@@ -4,6 +4,8 @@ This tests the performance of open-registry
 
 ## Usage
 
+Run `clojure generate-tests.clj`
+
 Run `./build.sh`
 
 Run `./run.sh`
@@ -15,6 +17,8 @@ Look at `report.md`
 - A shell
 - Docker
 - Hyperfine
+- Clojure
+- Parallel
 - Patience
 
 ## Report from 2019-04-12
