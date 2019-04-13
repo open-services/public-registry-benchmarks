@@ -8,6 +8,10 @@ docker build -f Dockerfile.base -t benchmarks-base .
 
 cd tests/
 
+ARGS=""
+
 for filename in *; do
-  docker build -f $filename -t $filename .
+  ARGS+="$filename "
 done
+
+parallel -j 4 -k docker build -f {} -t {} . ::: $ARGS

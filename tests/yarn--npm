@@ -1,5 +1,4 @@
 FROM benchmarks-base
-
+RUN npm install -g npm@6.9.0
 RUN npm config set registry https://registry.yarnpkg.com
-
 CMD npm install --verbose

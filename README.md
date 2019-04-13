@@ -45,12 +45,20 @@ Here is a list of some public npm registries:
 - https://registry.nodejitsu.com - Broken: no response
 - https://npm.strongloop.com - Broken: invalid cert
 
+## Adding new registries/clients
+
+You can add your own registry/client if you follow the format in
+`generate-tests.clj` and send a PR.
+
 ### `tests/`
 
 The `tests/` directory contains one Dockerfile per test. The Dockerfile
 sets everything up for the test. The naming convention is "$registry--$client"
 so `npm--npm` would mean using the `npm` client to request from `registry.npmjs.org`,
 the file `yarn--npm` would mean using the `npm` client to request from `registry.yarnpkg.com`
+
+All of these are generated from running `clojure generate-tests.clj`, so don't
+change them directly.
 
 ## License
 
