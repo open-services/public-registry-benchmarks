@@ -21,20 +21,30 @@ Look at `report.md`
 - Parallel
 - Patience
 
-## Report from 2019-04-12
+## Report from 2019-04-13
+
+Sorted by fastest install time. Lower is better.
 
 | Command | Mean [s] | Min…Max [s] |
 |:---|---:|---:|
-| `docker run -t ipfs--npm` | 40.439 ± 0.423 | 40.080…40.905 |
-| `docker run -t ipfs--yarn` | 39.454 ± 2.738 | 37.557…42.593 |
-| `docker run -t node-modules--npm` | 21.297 ± 0.309 | 21.009…21.623 |
-| `docker run -t node-modules--yarn` | 25.872 ± 0.164 | 25.685…25.988 |
-| `docker run -t npm--npm` | 6.278 ± 0.390 | 5.994…6.723 |
-| `docker run -t npm--yarn` | 6.116 ± 0.400 | 5.743…6.538 |
-| `docker run -t open-registry--npm` | 8.530 ± 0.110 | 8.406…8.618 |
-| `docker run -t open-registry--yarn` | 8.430 ± 0.254 | 8.137…8.585 |
-| `docker run -t yarn--npm` | 7.691 ± 2.014 | 6.521…10.016 |
-| `docker run -t yarn--yarn` | 6.170 ± 0.050 | 6.135…6.227 |
+| `docker run -t yarn--pnpm` | 4.874 ± 0.087 | 4.791…4.965 |
+| `docker run -t npm--pnpm` | 4.899 ± 0.070 | 4.855…4.979 |
+| `docker run -t open-registry--pnpm` | 5.114 ± 0.228 | 4.890…5.346 |
+| `docker run -t npm--yarn` | 5.954 ± 0.108 | 5.879…6.079 |
+| `docker run -t npm--npm` | 6.331 ± 0.260 | 6.129…6.624 |
+| `docker run -t yarn--yarn` | 6.369 ± 0.115 | 6.238…6.453 |
+| `docker run -t yarn--npm` | 6.643 ± 0.183 | 6.454…6.820 |
+| `docker run -t open-registry--npm` | 8.887 ± 0.176 | 8.705…9.057 |
+| `docker run -t open-registry--yarn` | 8.617 ± 0.182 | 8.490…8.825 |
+| `docker run -t node-modules--pnpm` | 9.447 ± 0.542 | 8.824…9.813 |
+| `docker run -t ipfs--pnpm` | 13.213 ± 0.225 | 12.965…13.403 |
+| `docker run -t node-modules--npm` | 20.699 ± 0.297 | 20.359…20.909 |
+| `docker run -t cnpmjs--pnpm` | 24.116 ± 0.511 | 23.543…24.522 |
+| `docker run -t node-modules--yarn` | 24.792 ± 0.259 | 24.528…25.045 |
+| `docker run -t cnpmjs--npm` | 28.835 ± 3.273 | 25.577…32.122 |
+| `docker run -t ipfs--npm` | 40.835 ± 11.920 | 32.554…54.497 |
+| `docker run -t cnpmjs--yarn` | 43.500 ± 0.162 | 43.349…43.671 |
+| `docker run -t ipfs--yarn` | 44.517 ± 3.429 | 41.839…48.382 |
 
 ### List of registries
 
