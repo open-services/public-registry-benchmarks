@@ -1,4 +1,4 @@
-#! /usr/bin/env sh
+#! /usr/bin/env bash
 
 # This file executes the tests
 
@@ -11,5 +11,7 @@ cd tests/
 for filename in *; do
   CMD+=" 'docker run -t $filename'"
 done
+
+cd ../
 
 eval $CMD
