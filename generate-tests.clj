@@ -1,8 +1,54 @@
 ;; /usr/bin/env sh
 ;;
-;; Tests are generated from two lists of clients + registries
+;; Benchmarks are generated from two lists of clients + registries
 ;; So having the lists ["npm" "yarn"] and ["npm-reg" "yarn-reg"] should generate
 ;; one list of ["npm--npm-reg"]
+
+;; (def projects [
+;;   "freeCodeCamp/freeCodeCamp#35cfffebd5db40837e285a8731eadc1a2d99f7c1"
+;;   "vuejs/vue"
+;;   "twbs/bootstrap"
+;;   "facebook/react"
+;;   "getify/You-Dont-Know-JS"
+;;   "airbnb/javascript"
+;;   "electron/electron"
+;;   "nodejs/node"
+;;   "axios/axios"
+;;   "mrdoob/three.js"
+;;   "justjavac/free-programming-books-zh_CN"
+;;   "atom/atom"
+;;   "webpack/webpack"
+;;   "trekhleb/javascript-algorithms"
+;;   "Microsoft/TypeScript"
+;;   "angular/angular"
+;;   "mui-org/material-ui"
+;;   "expressjs/express"
+;;   "30-seconds/30-seconds-of-code"
+;;   "chartjs/Chart.js"
+;;   "h5bp/html5-boilerplate"
+;;   "meteor/meteor"
+;;   "lodash/lodash"
+;;   "ionic-team/ionic"
+;;   "ElemeFE/element"
+;;   "storybooks/storybook"
+;;   "Dogfalo/materialize"
+;;   "yarnpkg/yarn"
+;;   "nwjs/nw.js"
+;;   "thedaviddias/Front-End-Checklist"
+;; ])
+
+;; (def packages ["lodash"
+;;                "request"
+;;                "chalk"
+;;                "react"
+;;                "express"
+;;                "commander"
+;;                "moment"
+;;                "debug"
+;;                "async"
+;;                "bluebird"
+;;                "prop-types"
+;;                "react-dom"])
 
 (def clients {:yarn "1.15.2"
               :npm "6.9.0"
@@ -13,7 +59,7 @@
                  :ipfs "https://registry.js.ipfs.io"
                  :node-modules "https://registry.node-modules.io"
                  :cnpmjs "https://r.cnpmjs.org"
-                 :open-registry "http://npm.open-registry.dev"})
+                 :open-registry "https://npm.open-registry.dev"})
 
 (def dockerfile-template
   (clojure.string/join "\n"

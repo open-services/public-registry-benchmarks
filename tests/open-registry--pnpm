@@ -1,4 +1,4 @@
 FROM benchmarks-base
 RUN npm install -g pnpm@3.1.0
-RUN pnpm config set registry http://npm.open-registry.dev
+RUN pnpm config set registry https://npm.open-registry.dev
 CMD pnpm install --verbose
