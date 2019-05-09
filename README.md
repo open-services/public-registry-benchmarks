@@ -17,35 +17,34 @@ Look at `report.md`
 - A shell
 - Docker
 - Hyperfine
-- Clojure
+- Clojure (to compile the testcases)
 - Parallel
 - Patience
 
-## Report from 2019-04-24
+## Report from 2019-05-09
 
 Sorted by fastest install time. Lower is better.
 
 | Command | Mean [s] | Min…Max [s] |
 |:---|---:|---:|
-| `docker run -t npm--pnpm` | 4.724 ± 0.093 | 4.659…4.830 |
-| `docker run -t yarn--pnpm` | 5.327 ± 0.100 | 5.238…5.435 |
-| `docker run -t npm--npm` | 6.725 ± 0.133 | 6.599…6.865 |
-| `docker run -t npm--yarn` | 6.749 ± 0.110 | 6.631…6.850 |
-| `docker run -t yarn--npm` | 6.953 ± 0.201 | 6.722…7.085 |
-| `docker run -t yarn--yarn` | 7.052 ± 0.203 | 6.868…7.270 |
-| `docker run -t open-registry--pnpm` | 9.407 ± 0.011 | 9.396…9.418 |
-| `docker run -t node-modules--pnpm` | 11.673 ± 0.138 | 11.522…11.794 |
-| `docker run -t open-registry--npm` | 12.994 ± 0.571 | 12.525…13.630 |
-| `docker run -t open-registry--yarn` | 13.113 ± 0.359 | 12.813…13.510 |
-| `docker run -t ipfs--pnpm` | 18.828 ± 0.354 | 18.520…19.215 |
-| `docker run -t cnpmjs--pnpm` | 25.297 ± 1.638 | 24.092…27.162 |
-| `docker run -t cnpmjs--npm` | 26.599 ± 0.401 | 26.149…26.920 |
-| `docker run -t node-modules--npm` | 27.722 ± 1.185 | 26.762…29.046 |
-| `docker run -t node-modules--yarn` | 33.546 ± 0.335 | 33.276…33.921 |
-| `docker run -t cnpmjs--yarn` | 45.627 ± 2.831 | 43.547…48.851 |
-| `docker run -t ipfs--npm` | 73.845 ± 21.370 | 50.990…93.331 |
-| `docker run -t ipfs--yarn` | 90.679 ± 33.722 | 55.575…122.824 |
-
+| `docker run -t npm--pnpm` | 5.086 ± 0.108 | 4.977…5.194 |
+| `docker run -t yarn--pnpm` | 5.364 ± 0.438 | 5.044…5.863 |
+| `docker run -t open-registry--pnpm` | 5.799 ± 0.027 | 5.783…5.830 |
+| `docker run -t npm--npm` | 6.825 ± 0.135 | 6.678…6.942 |
+| `docker run -t npm--yarn` | 6.994 ± 0.205 | 6.859…7.229 |
+| `docker run -t yarn--yarn` | 7.134 ± 0.072 | 7.064…7.207 |
+| `docker run -t yarn--npm` | 7.895 ± 0.901 | 7.111…8.880 |
+| `docker run -t open-registry--yarn` | 9.726 ± 0.410 | 9.261…10.034 |
+| `docker run -t node-modules--pnpm` | 11.995 ± 0.210 | 11.815…12.225 |
+| `docker run -t ipfs--pnpm` | 16.792 ± 0.322 | 16.424…17.023 |
+| `docker run -t open-registry--npm` | 19.621 ± 17.105 | 9.661…39.372 |
+| `docker run -t node-modules--npm` | 29.778 ± 1.743 | 28.620…31.783 |
+| `docker run -t node-modules--yarn` | 34.662 ± 1.319 | 33.605…36.140 |
+| `docker run -t ipfs--npm` | 44.139 ± 2.959 | 40.741…46.145 |
+| `docker run -t cnpmjs--yarn` | 45.248 ± 1.672 | 43.317…46.230 |
+| `docker run -t ipfs--yarn` | 49.791 ± 2.725 | 47.292…52.697 |
+| `docker run -t cnpmjs--npm` | 77.518 ± 83.204 | 27.280…173.560 |
+| `docker run -t cnpmjs--pnpm` | 113.801 ± 75.418 | 27.236…165.316 |
 
 ### List of registries
 
