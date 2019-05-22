@@ -1,6 +1,8 @@
 version: 2.1
 jobs:
  skip:
+   docker:
+     - image: circleci/golang:1.12
    steps:
      - run: echo "build for public-registry-benchmarks ONLY run every day at 12:00"
  build:
