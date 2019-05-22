@@ -1,4 +1,0 @@
-FROM benchmarks-base
-RUN npm install -g yarn@1.15.2
-RUN yarn config set registry https://registry.node-modules.io
-CMD yarn install --verbose
