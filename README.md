@@ -22,16 +22,16 @@ Look at `report.md`
 - Patience
 
 <!-- REPORT -->
-## Report from 2019-05-22
+## Report from 2019-05-22-09:42
 
 Sorted by fastest install time. Lower is better.
 
 
-|:---|---:|---:|
 | Command | Mean [s] | Min…Max [s] |
-| `docker run -t open-registry--pnpm` | 6.137 ± 0.298 | 5.912…6.475 |
-| `docker run -t open-registry--yarn` | 9.112 ± 0.175 | 8.991…9.313 |
-| `docker run -t open-registry--npm` | 9.225 ± 0.302 | 8.877…9.414 |
+|:---|---:|---:|
+| `docker run -t open-registry--pnpm` | 10.213 ± 0.045 | 10.182…10.266 |
+| `docker run -t open-registry--yarn` | 16.304 ± 0.014 | 16.289…16.316 |
+| `docker run -t open-registry--npm` | 17.350 ± 0.235 | 17.153…17.610 |
 <!-- REPORT_END -->
 
 ### List of registries
