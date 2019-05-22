@@ -4,7 +4,7 @@
 
 set -ex
 
-CMD="hyperfine --warmup 1 --min-runs 3 --export-markdown report.md"
+CMD="hyperfine --style basic --warmup 1 --min-runs 3 --export-markdown report.md"
 
 cd tests/
 
