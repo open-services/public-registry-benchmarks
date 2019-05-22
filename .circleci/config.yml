@@ -7,6 +7,7 @@ jobs:
      - setup_remote_docker
      - checkout
      - run: wget https://github.com/sharkdp/hyperfine/releases/download/v1.5.0/hyperfine_1.5.0_amd64.deb
+     - run: echo "8ed797c6a0ba0b9e7886b70ff493bc3448293e3e hyperfine_1.5.0_amd64.deb" | sha1sum -c -
      - run: sudo dpkg -i hyperfine_1.5.0_amd64.deb
      - run: sudo apt update && sudo apt install parallel
      - run: ./build.sh
