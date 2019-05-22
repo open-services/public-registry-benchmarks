@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
  build:
    docker:
@@ -19,3 +19,18 @@ jobs:
          fingerprints:
            - "2e:f7:80:fd:0a:eb:98:b5:c9:e9:ee:dc:d7:35:ee:3f"
      - run: ./archive-report.sh
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - run: echo "build for public-registry-benchmarks ONLY run every day at 12:00"
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - build
