@@ -54,11 +54,11 @@
               :npm "6.9.0"
               :pnpm "3.1.0"})
 
-(def registries {;; :yarn "https://registry.yarnpkg.com"
-                 ;; :npm "https://registry.npmjs.org"
-                 ;; :ipfs "https://registry.js.ipfs.io"
-                 ;; :node-modules "https://registry.node-modules.io"
-                 ;; :cnpmjs "https://r.cnpmjs.org"
+(def registries {:yarn "https://registry.yarnpkg.com"
+                 :npm "https://registry.npmjs.org"
+                 :ipfs "https://registry.js.ipfs.io"
+                 :node-modules "https://registry.node-modules.io"
+                 :cnpmjs "https://r.cnpmjs.org"
                  :open-registry "https://npm.open-registry.dev"
                  ;; :github "https://npm.pkg.github.com"
                  })
