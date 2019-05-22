@@ -12,7 +12,6 @@ jobs:
      - run: sudo apt update && sudo apt install parallel
      - run: ./build.sh
      - run: ./run.sh
+     - run: ./archive-report.sh
      - store_artifacts:
-         path: report.md
-         destination: report.md
-
+         path: reports/

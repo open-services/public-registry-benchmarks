@@ -21,30 +21,18 @@ Look at `report.md`
 - Parallel
 - Patience
 
-## Report from 2019-05-09
+<!-- REPORT -->
+## Report from 2019-05-22
 
 Sorted by fastest install time. Lower is better.
 
-| Command | Mean [s] | Min…Max [s] |
+
 |:---|---:|---:|
-| `docker run -t npm--pnpm` | 5.086 ± 0.108 | 4.977…5.194 |
-| `docker run -t yarn--pnpm` | 5.364 ± 0.438 | 5.044…5.863 |
-| `docker run -t open-registry--pnpm` | 5.799 ± 0.027 | 5.783…5.830 |
-| `docker run -t npm--npm` | 6.825 ± 0.135 | 6.678…6.942 |
-| `docker run -t npm--yarn` | 6.994 ± 0.205 | 6.859…7.229 |
-| `docker run -t yarn--yarn` | 7.134 ± 0.072 | 7.064…7.207 |
-| `docker run -t yarn--npm` | 7.895 ± 0.901 | 7.111…8.880 |
-| `docker run -t open-registry--yarn` | 9.726 ± 0.410 | 9.261…10.034 |
-| `docker run -t node-modules--pnpm` | 11.995 ± 0.210 | 11.815…12.225 |
-| `docker run -t ipfs--pnpm` | 16.792 ± 0.322 | 16.424…17.023 |
-| `docker run -t open-registry--npm` | 19.621 ± 17.105 | 9.661…39.372 |
-| `docker run -t node-modules--npm` | 29.778 ± 1.743 | 28.620…31.783 |
-| `docker run -t node-modules--yarn` | 34.662 ± 1.319 | 33.605…36.140 |
-| `docker run -t ipfs--npm` | 44.139 ± 2.959 | 40.741…46.145 |
-| `docker run -t cnpmjs--yarn` | 45.248 ± 1.672 | 43.317…46.230 |
-| `docker run -t ipfs--yarn` | 49.791 ± 2.725 | 47.292…52.697 |
-| `docker run -t cnpmjs--npm` | 77.518 ± 83.204 | 27.280…173.560 |
-| `docker run -t cnpmjs--pnpm` | 113.801 ± 75.418 | 27.236…165.316 |
+| Command | Mean [s] | Min…Max [s] |
+| `docker run -t open-registry--pnpm` | 6.137 ± 0.298 | 5.912…6.475 |
+| `docker run -t open-registry--yarn` | 9.112 ± 0.175 | 8.991…9.313 |
+| `docker run -t open-registry--npm` | 9.225 ± 0.302 | 8.877…9.414 |
+<!-- REPORT_END -->
 
 ### List of registries
 
