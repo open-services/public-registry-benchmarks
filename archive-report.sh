@@ -9,7 +9,7 @@
 sort -t "|" -n -k 3 report.md > report-sorted.md
 mv report-sorted.md report.md
 
-today=$(date "+%Y-%m-%d")
+today=$(date "+%Y-%m-%d-%H:%M")
 header="## Report from $today
 
 Sorted by fastest install time. Lower is better.
