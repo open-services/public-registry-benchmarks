@@ -15,3 +15,11 @@ jobs:
      - run: ./archive-report.sh
      - store_artifacts:
          path: reports/
+     - add_ssh_keys:
+       fingerprints:
+         - "2e:f7:80:fd:0a:eb:98:b5:c9:e9:ee:dc:d7:35:ee:3f"
+     - run: git config user.email "benchmarks@open-registry.dev"
+     - run: git config user.name "Automatic Benchmark Report"
+     - run: git add .
+     - run: git commit -m "New Report"
+     - run: git push origin master
