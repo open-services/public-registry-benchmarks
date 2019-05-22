@@ -9,7 +9,7 @@
 sort -t "|" -n -k 3 report.md > report-sorted.md
 mv report-sorted.md report.md
 
-today=$(date "+%Y-%m-%d-%H:%M")
+today=$(date "+%Y-%m-%d")
 header="## Report from $today
 
 Sorted by fastest install time. Lower is better.
@@ -32,3 +32,8 @@ tail='^<!-- REPORT_END -->$'
 sed -i -e "/$lead/,/$tail/{ /$lead/{p; r reports/$today.md
         }; /$tail/p; d }" README.md
 
+git config user.email "benchmarks@open-registry.dev"
+git config user.name "Automatic Benchmark Report"
+git add .
+git commit -m "New Report $today"
+git push origin master
