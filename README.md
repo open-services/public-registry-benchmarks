@@ -27,9 +27,11 @@ Look at `report.md`
 Sorted by fastest install time. Lower is better.
 
 
-|:---|---:|---:|
 | Command | Mean [s] | Min…Max [s] |
-| `docker run -t open-registry--pnpm` | 5.754 ± 0.060 | 5.692…5.811 |
+|:---|---:|---:|
+| `docker run -t open-registry--pnpm` | 10.016 ± 0.027 | 9.994…10.045 |
+| `docker run -t open-registry--yarn` | 16.166 ± 0.350 | 15.904…16.563 |
+| `docker run -t open-registry--npm` | 17.255 ± 0.408 | 16.959…17.719 |
 <!-- REPORT_END -->
 
 ### List of registries
