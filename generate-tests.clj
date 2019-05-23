@@ -52,23 +52,59 @@
 
 (def clients {:yarn "1.15.2"
               :npm "6.9.0"
-              :pnpm "3.1.0"})
+              :pnpm "3.1.0"
+              })
 
-(def registries {:yarn "https://registry.yarnpkg.com"
+(def registries {;; https://yarnpkg.com/
+                 :yarn "https://registry.yarnpkg.com"
+                 ;; https://www.npmjs.com/
                  :npm "https://registry.npmjs.org"
+                 ;; https://github.com/ipfs-shipyard/npm-on-ipfs
                  :ipfs "https://registry.js.ipfs.io"
+                 ;; http://node-modules.io/
                  :node-modules "https://registry.node-modules.io"
+                 ;; https://cnpmjs.org/
                  :cnpmjs "https://r.cnpmjs.org"
+                 ;; https://github.com/open-services/open-registry
                  :open-registry "https://npm.open-registry.dev"
+                 ;; https://github.com/open-services/bolivar
+                 :bolivar "http://localhost:8080"
                  ;; :github "https://npm.pkg.github.com"
                  })
 
-(def dockerfile-template
+;; Bolivar-specifics
+(def bolivar-dist "https://github.com/open-services/bolivar/releases/download/0.1.0/bolivar-0.1.0-linux-amd64")
+(def fetch-bolivar (str "RUN wget " bolivar-dist))
+(def make-bolivar+x "RUN chmod +x bolivar-0.1.0-linux-amd64")
+(def move-bolivar "RUN mv bolivar-0.1.0-linux-amd64 /usr/local/bin/bolivar")
+(def start-and-wait "until tail -f bolivar.log | grep -m 1 \"Starting server\"; do : ; done")
+(def run-bolivar+client-install
+  (format "bash -c 'bolivar > bolivar.log & %s && $client install --verbose'" start-and-wait))
+
+;; Here you can add any specific steps a registry needs
+(def special-build-steps {:bolivar [fetch-bolivar
+                                    make-bolivar+x
+                                    move-bolivar]})
+
+;; Here you can define a separate command for running the test. It should,
+;; as a last action, install all dependences for the project in WORKDIR
+(def run-cmds {:bolivar run-bolivar+client-install})
+
+(def default-run-cmd "$client install --verbose")
+
+(defn get-run-cmd [registry]
+  (let [run-cmd (registry run-cmds)]
+    (if (nil? run-cmd)
+      default-run-cmd
+      run-cmd)))
+
+(defn dockerfile-template [extra-steps cmd]
   (clojure.string/join "\n"
-                       ["FROM benchmarks-base"
-                        "RUN npm install -g $client@$version"
-                        "RUN $client config set registry $registry"
-                        "CMD $client install --verbose"]))
+                       (vec (concat ["FROM benchmarks-base"
+                                     "RUN npm install -g $client@$version"]
+                                    extra-steps
+                                    ["RUN $client config set registry $registry"
+                                     (str "CMD " cmd)]))))
 
 (defn cartesian-product
   "All the ways to take one item from each sequence"
@@ -104,10 +140,12 @@
   (println (format "### Generating for test = Client: %s Registry %s" client registry))
   (let [client-version (client clients)
         registry-url (registry registries)
-        image-name (format "%s--%s" (name registry) (name client))]
+        image-name (format "%s--%s" (name registry) (name client))
+        extra-steps (registry special-build-steps)
+        run-cmd (get-run-cmd registry)]
     (println image-name)
     (spit (str "tests/" image-name)
-          (new-dockerfile dockerfile-template
+          (new-dockerfile (dockerfile-template extra-steps run-cmd)
                           (name client)
                           client-version
                           registry-url))))

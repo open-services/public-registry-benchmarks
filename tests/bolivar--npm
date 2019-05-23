@@ -1,0 +1,7 @@
+FROM benchmarks-base
+RUN npm install -g npm@6.9.0
+RUN wget https://github.com/open-services/bolivar/releases/download/0.1.0/bolivar-0.1.0-linux-amd64
+RUN chmod +x bolivar-0.1.0-linux-amd64
+RUN mv bolivar-0.1.0-linux-amd64 /usr/local/bin/bolivar
+RUN npm config set registry http://localhost:8080
+CMD bash -c 'bolivar > bolivar.log & until tail -f bolivar.log | grep -m 1 "Starting server"; do : ; done && npm install --verbose'
