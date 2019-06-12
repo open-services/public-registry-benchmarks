@@ -22,34 +22,34 @@ Look at `report.md`
 - Patience
 
 <!-- REPORT -->
-## Report from 2019-06-11
+## Report from 2019-06-12
 
 Sorted by fastest install time. Lower is better.
 
 
 | Command | Mean [s] | Min…Max [s] |
 |:---|---:|---:|
-| `docker run -t npm--pnpm` | 8.288 ± 0.044 | 8.242…8.330 |
-| `docker run -t yarn--pnpm` | 8.427 ± 0.091 | 8.369…8.532 |
-| `docker run -t node-modules--pnpm` | 9.371 ± 0.222 | 9.115…9.508 |
-| `docker run -t open-registry--pnpm` | 9.565 ± 0.122 | 9.489…9.706 |
-| `docker run -t npm--yarn` | 11.058 ± 0.219 | 10.851…11.288 |
-| `docker run -t yarn--yarn` | 11.273 ± 0.175 | 11.131…11.468 |
-| `docker run -t npm--npm` | 11.312 ± 0.040 | 11.281…11.357 |
-| `docker run -t yarn--npm` | 12.414 ± 0.367 | 12.117…12.824 |
-| `docker run -t open-registry--yarn` | 15.942 ± 0.125 | 15.800…16.035 |
-| `docker run -t open-registry--npm` | 16.493 ± 0.226 | 16.284…16.734 |
-| `docker run -t ipfs--pnpm` | 17.110 ± 0.176 | 16.936…17.288 |
-| `docker run -t cnpmjs--pnpm` | 18.845 ± 0.577 | 18.497…19.511 |
-| `docker run -t node-modules--npm` | 21.072 ± 0.240 | 20.795…21.212 |
-| `docker run -t node-modules--yarn` | 22.074 ± 0.238 | 21.831…22.306 |
-| `docker run -t cnpmjs--npm` | 23.695 ± 2.889 | 21.518…26.972 |
-| `docker run -t cnpmjs--yarn` | 35.350 ± 0.114 | 35.220…35.431 |
-| `docker run -t ipfs--npm` | 42.961 ± 1.236 | 42.057…44.369 |
-| `docker run -t ipfs--yarn` | 56.595 ± 1.086 | 55.374…57.454 |
-| `docker run -t bolivar--pnpm` | 101.715 ± 6.416 | 95.133…107.950 |
-| `docker run -t bolivar--yarn` | 157.778 ± 29.436 | 123.791…175.158 |
-| `docker run -t bolivar--npm` | 188.006 ± 22.362 | 162.240…202.354 |
+| `docker run -t npm--pnpm` | 8.522 ± 0.129 | 8.420…8.667 |
+| `docker run -t yarn--pnpm` | 8.548 ± 0.084 | 8.457…8.624 |
+| `docker run -t open-registry--pnpm` | 9.724 ± 0.030 | 9.706…9.758 |
+| `docker run -t node-modules--pnpm` | 10.399 ± 0.283 | 10.150…10.706 |
+| `docker run -t npm--yarn` | 11.366 ± 0.115 | 11.297…11.499 |
+| `docker run -t yarn--yarn` | 11.509 ± 0.105 | 11.437…11.629 |
+| `docker run -t npm--npm` | 11.702 ± 0.073 | 11.619…11.749 |
+| `docker run -t yarn--npm` | 12.425 ± 0.238 | 12.156…12.609 |
+| `docker run -t open-registry--yarn` | 16.133 ± 0.178 | 15.943…16.297 |
+| `docker run -t open-registry--npm` | 17.046 ± 0.489 | 16.672…17.600 |
+| `docker run -t ipfs--pnpm` | 18.240 ± 0.445 | 17.835…18.715 |
+| `docker run -t cnpmjs--pnpm` | 19.656 ± 2.674 | 18.112…22.743 |
+| `docker run -t node-modules--npm` | 19.993 ± 0.365 | 19.761…20.414 |
+| `docker run -t node-modules--yarn` | 21.777 ± 0.442 | 21.358…22.239 |
+| `docker run -t cnpmjs--npm` | 22.218 ± 0.629 | 21.722…22.925 |
+| `docker run -t cnpmjs--yarn` | 35.607 ± 0.118 | 35.501…35.734 |
+| `docker run -t ipfs--npm` | 54.892 ± 7.635 | 46.488…61.401 |
+| `docker run -t ipfs--yarn` | 62.192 ± 10.787 | 51.438…73.012 |
+| `docker run -t bolivar--pnpm` | 100.118 ± 10.965 | 87.497…107.306 |
+| `docker run -t bolivar--yarn` | 176.619 ± 27.030 | 150.592…204.551 |
+| `docker run -t bolivar--npm` | 212.261 ± 15.413 | 199.092…229.213 |
 <!-- REPORT_END -->
 
 ### List of registries
