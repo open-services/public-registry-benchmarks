@@ -28,7 +28,7 @@ workflows:
   version: 2
   commit:
     jobs:
-      - build
+      - skip
   nightly:
     triggers:
       - schedule:
