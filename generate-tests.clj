@@ -62,15 +62,15 @@
                  ;; https://github.com/ipfs-shipyard/npm-on-ipfs
                  :ipfs "https://registry.js.ipfs.io"
                  ;; http://node-modules.io/
-                 :node-modules "https://registry.node-modules.io"
+                 ;; TODO seems registry.node-modules.io no longer works
+                 ;; :node-modules "https://registry.node-modules.io"
                  ;; https://cnpmjs.org/
                  :cnpmjs "https://r.cnpmjs.org"
                  ;; https://github.com/open-services/open-registry
                  :open-registry "https://npm.open-registry.dev"
                  ;; https://github.com/open-services/bolivar
-                 :bolivar "http://localhost:8080"
+                 :bolivar "http://localhost:8080"})
                  ;; :github "https://npm.pkg.github.com"
-                 })
 
 ;; Bolivar-specifics
 (def bolivar-dist "https://github.com/open-services/bolivar/releases/download/0.1.0/bolivar-0.1.0-linux-amd64")
